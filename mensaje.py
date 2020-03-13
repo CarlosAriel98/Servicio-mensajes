@@ -12,7 +12,7 @@ class messages:
     programa de mensajeria
     """
 
-    def __init__(self, from_number="", text_of_sms=""):
+    def __init__(self, from_number="", text_of_sms="", has_been_viewed=""):
         """
         Inicia un mensaje con valores de from_number,
         time_arrived, text_of_sms enviadas por el usario(esto
