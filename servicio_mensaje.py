@@ -15,7 +15,7 @@ class ShortMessageService:
 
     def message_count(self):
         """ Muestra la cantidad de mensajes en la bandeja """
-        en_Lista = str(len(self.my_box))
+        print("Se encontraron en bandeja ", len(self.my_box)," Mensajes")
     
     
     def get_unread_indexes(self, has_been_viewed = "Noleido"):
@@ -31,24 +31,27 @@ class ShortMessageService:
         Funcion privada
         """
 
-        for sms in self.my_box:
+        for msm in self.my_box:
             if str(msm.id) == str(id_message):
                 return msm
         
         return None
 
-    def delete_message(self, id_message)
-    """ Elimina un mensaje"""
-    msm = self._search_note(id_message)
+    def delete_message(self, id_message):
+        """ Elimina un mensaje"""
+        msm = self._search_note(id_message)
 
-    if sms:
-        sefl.my_box.remove(id_message)
-        return True
-    else:
-        print("no existe un mensaje con el id: {0}")
-        self.format(id_message)
-        return False
+        if msm:
+            self.my_box.remove(id_message)
+            return True
+        else:
+            print("no existe un mensaje con el id: {0}")
+            msm.format(id_message)
+            return False
     
     def clear(self):
         """ Elimina todos los mensajes"""
+        for msm in self.my_box:
+            msm.remove(id)
+
     
