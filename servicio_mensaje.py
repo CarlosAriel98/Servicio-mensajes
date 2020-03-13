@@ -42,16 +42,19 @@ class ShortMessageService:
         msm = self._search_note(id_message)
 
         if msm:
-            self.my_box.remove(id_message)
+            self.my_box.remove(msm)
+            print("El mensaje {0} a sido eliminado".format(id_message))
             return True
         else:
-            print("no existe un mensaje con el id: {0}")
-            msm.format(id_message)
+            print("no existe un mensaje con el id: {0}"
+            .format(id_message))
             return False
     
     def clear(self):
         """ Elimina todos los mensajes"""
-        for msm in self.my_box:
-            msm.remove(id)
-
+        if self.my_box != 0:
+            self.my_box.clear()
+            print("Todlos los mensajes fueron eliminados")
+        else:
+            print("No existe elementos para eleminar")
     
